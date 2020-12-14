@@ -24,7 +24,8 @@ namespace Codewars
             //{
             //    Console.WriteLine(item);
             //}
-            Kata.SumIntervals(new interval[] { })
+            int[] arr = new int[] { 0,1,0,1,0,1,99 };
+            Console.WriteLine(Kata.SingleNumber3(arr));
             Console.ReadKey();
         }
     }
