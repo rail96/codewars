@@ -1132,6 +1132,42 @@ namespace Codewars
             }
             return false;
         }
+
+        //Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+        public static void MoveZeroesFromArr(int[] nums)
+        {           
+            var count = nums.Where(x => x == 0).Count();
+            nums = nums.Where(x => x != 0).ToArray();
+            Array.Resize(ref nums, nums.Length + count);     
+        }
+
+        public static int[] PlusOne(int[] digits)
+        {
+            long number = 0;
+            //convert digits to one integer
+            for (int i=0; i<digits.Length; i++)
+            {
+                var countOfZeroes = digits.Length - i - 1;
+                string ten = "1";
+                for (int j=0; j<countOfZeroes; j++)
+                {
+                    ten += "0";
+                }
+                number += digits[i] * long.Parse(ten);
+              
+            }
+
+            //increase the num
+            number++;
+
+            //get the lenght of new int ( can be cases when initial num is 999 -> 1000)
+            int newLenght = (int)Math.Floor(Math.Log10(number)) + 1;
+
+
+            //split integer back to digits
+            return number.ToString().Select(q => int.Parse(new string(q, 1))).ToArray();
+         
+        }
     }
 
 }

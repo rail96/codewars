@@ -9,23 +9,8 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            //var simpleQueue = new Queue<int>();
-            //simpleQueue.Enqueue(1);
-            //simpleQueue.Enqueue(2);
-            //simpleQueue.Enqueue(3);
-
-            //var peek = simpleQueue.Peek();
-
-            //simpleQueue.Dequeue();
-
-            //Console.WriteLine(peek);
-
-            //foreach (var item in simpleQueue)
-            //{
-            //    Console.WriteLine(item);
-            //}
-            int[] arr = new int[] { 0,1,0,1,0,1,99 };
-            Console.WriteLine(Kata.SingleNumber3(arr));
+            int[] arr = new int[]{9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+            Kata.PlusOne(arr);
             Console.ReadKey();
         }
     }
