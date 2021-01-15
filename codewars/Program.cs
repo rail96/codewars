@@ -10,8 +10,8 @@ namespace Codewars
     {
         static void Main(string[] args)
         {
-            var array = new int[] { 0, 1, 0, 3, 12 };
-            Kata.MoveZeroeees(array);
+            var array = new int[] { 3, 2, 4 };
+            var outArr = Kata.TwoSum(array, 6);
             Console.WriteLine();
         }
     }
