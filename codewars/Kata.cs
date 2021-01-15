@@ -1193,6 +1193,41 @@ namespace Codewars
             */
             return key;
         }
+        //Move all zeroes to the end of an array
+        public static void MoveZeroeees(int[] nums)
+        {
+            int count = 0;
+            for (int i=0; i<nums.Length; i++)
+            {
+                if (nums[i] != 0)
+                {
+                    nums[count++] = nums[i];
+                }
+            }
+            while (count < nums.Length)
+                nums[count++] = 0;
+        }
+
+        //Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+        public static int[] TwoSum(int[] nums, int target)
+        {
+            var indArr = new int[2];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                var diff = target - nums[i];
+
+                for (int j = i+1; j < nums.Length; j++)
+                {
+                    if (nums[j] == diff)
+                    {
+                        indArr[0] = i;
+                        indArr[1] = j;
+                        return indArr;
+                    }
+                }
+            }
+            return indArr;
+        }
     }
 
 }
