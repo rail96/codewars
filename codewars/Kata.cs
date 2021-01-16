@@ -1228,6 +1228,59 @@ namespace Codewars
             }
             return indArr;
         }
+
+        //Rotate an array in 90 degree clockwise
+        public static void Rotate(int[][] matrix)
+        {
+            int n = matrix.Length;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i; j < n; j++)
+                {
+                    int temp = matrix[i][j];
+                    matrix[i][j] = matrix[j][i];
+                    matrix[j][i] = temp;
+                }
+            }
+            //Print Matrix
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(matrix[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+
+            //Rotate every row
+            for (int i = 0; i < n; i++)
+            {
+                int start = 0;
+                int end = n - 1;
+                while(start < end)
+                {
+                    int temp = matrix[i][start];
+                    matrix[i][start] = matrix[i][end];
+                    matrix[i][end] = temp;
+                    start++;
+                    end--;
+                }
+            }
+
+            //Print Matrix
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(matrix[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+        }
     }
 
 }
